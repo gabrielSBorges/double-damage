@@ -1,10 +1,4 @@
-import {
-  Entity,
-  Column,
-  ObjectID,
-  ObjectIdColumn,
-  CreateDateColumn,
-} from 'typeorm';
+import { Entity, Column, ObjectID, ObjectIdColumn, CreateDateColumn } from 'typeorm';
 
 @Entity('sessions_logs')
 export class SessionLog {

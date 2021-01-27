@@ -1,11 +1,4 @@
-import {
-  Entity,
-  Column,
-  ObjectID,
-  ObjectIdColumn,
-  UpdateDateColumn,
-  CreateDateColumn,
-} from 'typeorm';
+import { Entity, Column, ObjectID, ObjectIdColumn, UpdateDateColumn, CreateDateColumn } from 'typeorm';
 
 @Entity('record_sheets')
 export class RecordSheet {

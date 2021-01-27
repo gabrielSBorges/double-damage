@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm';
 import { Campaign } from './campaigns.entity';
 
-@Entity({ database: 'mysqlConnection' })
+@Entity('users')
 export class User {
   @PrimaryGeneratedColumn()
   id: number;
