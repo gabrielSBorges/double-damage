@@ -1,6 +1,6 @@
 #config files
 .env
-ormconfig.json
+/ormconfig.json
 
 # compiled output
 /dist

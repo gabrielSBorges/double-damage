@@ -1,3 +1,4 @@
+import { join } from 'path';
 import { createConnection } from 'typeorm';
 
 const [mysql, mongo] = require('../../ormconfig.json');
@@ -5,18 +6,18 @@ const [mysql, mongo] = require('../../ormconfig.json');
 const mysqlConfig = { ...mysql };
 const mongoConfig = { ...mongo };
 
-mysqlConfig.entities = ['./mysql/entities/*.ts'];
-mysqlConfig.migrations = ['./mysql/migrations/*.ts'];
+mysqlConfig.entities = [join(__dirname, 'mysql', 'entities', '*.entity.{ts,js}')];
+mysqlConfig.migrations = [join(__dirname, 'mysql', 'migrations', '*.{ts,js}')];
 mysqlConfig.cli = { 
-  entitiesDir: './mysql/entities',
-  migrationsDir: './mysql/migrations'
+  entitiesDir: join(__dirname, 'mysql', 'entities'),
+  migrationsDir: join(__dirname, 'mongo', 'migrations')
 };
 
-mongoConfig.entities = ['./mongo/entities/*.ts'];
-mongoConfig.migrations = ['./mongo/migrations/*.ts'];
+mongoConfig.entities = [join(__dirname, 'mongo', 'entities', '*.entity.{ts,js}')];
+mongoConfig.migrations = [join(__dirname, 'mongo', 'migrations', '*.{ts,js}')];
 mongoConfig.cli = { 
-  entitiesDir: './mongo/entities',
-  migrationsDir: './mongo/migrations'
+  entitiesDir: join(__dirname, 'mongo', 'entities'),
+  migrationsDir: join(__dirname, 'mongo', 'migrations')
 };
 
 export const databaseProvider = [
