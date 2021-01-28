@@ -1,4 +1,5 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+require('dotenv').config()
 
 function isProduction() {
   return process.env.MODE == 'production';
