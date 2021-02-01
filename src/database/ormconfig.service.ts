@@ -13,16 +13,12 @@ export const mysql: TypeOrmModuleOptions = {
   username: process.env.MYSQL_USER,
   password: process.env.MYSQL_PASSWORD,
   database: process.env.MYSQL_DATABASE,
-  ssl: isProduction(),
-  migrationsRun: true
 };
 
 export const mongo: TypeOrmModuleOptions = {
   name: 'mongoConnection',
   type: 'mongodb',
-  url: `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.nxqev.mongodb.net/${process.env.MONGO_DATABASE}?retryWrites=true&w=majority`,
-  ssl: isProduction(),
+  url: `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_CLUSTER}.hg0lb.mongodb.net/${process.env.MONGO_DATABASE}?retryWrites=true&w=majority`,
   useNewUrlParser: true,
-  useUnifiedTopology: true,
-  migrationsRun: true
+  useUnifiedTopology: true
 };
