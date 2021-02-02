@@ -32,6 +32,11 @@ export class createUsersTable1612143421629 implements MigrationInterface {
                 isNullable: false,
             },
             {
+                name: 'active',
+                type: 'boolean',
+                isNullable: false,
+            },
+            {
                 name: 'created_at',
                 type: 'timestamp',
                 isNullable: false,
