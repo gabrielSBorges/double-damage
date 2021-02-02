@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity('campaigns_players')
-export class CampaignPlayer {
+@Entity('players')
+export class Player {
   @PrimaryGeneratedColumn()
   id: number;
 
