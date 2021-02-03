@@ -9,7 +9,14 @@ export class UsersService {
     private userRepository: Repository<User>,
   ) {}
 
-  async findAll(): Promise<User[]> {
-    return this.userRepository.find();
+  async create(user: User): Promise<User> {
+    return this.userRepository.save(user);
+  }
+
+  async login(user: User): Promise<User> {
+    return this.userRepository.createQueryBuilder('users')
+      .where('users.email = :userEmail', { userEmail: user.email })
+      .andWhere('users.password = :userPassword', { userPassword: user.password })
+      .getOne();
   }
 }
