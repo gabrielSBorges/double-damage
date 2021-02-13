@@ -19,6 +19,8 @@ export class User {
   email: string;
 
   @Field({ nullable: true })
+  _password: string;
+
   @Column({ length: 255 })
   password: string;
 

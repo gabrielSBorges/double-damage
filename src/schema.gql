@@ -6,7 +6,7 @@ type User {
   id: Float
   name: String
   email: String
-  password: String
+  _password: String
   active: Boolean
   created_at: DateTime
   updated_at: DateTime
@@ -21,7 +21,7 @@ input UserInput {
   id: Float
   name: String
   email: String
-  password: String
+  _password: String
   active: Boolean
   created_at: DateTime
   updated_at: DateTime
@@ -29,6 +29,8 @@ input UserInput {
 
 type Query {
   login(user: UserInput!): User
+  users(ids: [Int!]!): [User!]!
+  user(id: Int!): User
 }
 
 type Mutation {
