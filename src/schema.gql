@@ -17,6 +17,11 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 """
 scalar DateTime
 
+type LoginResponse {
+  message: String!
+  token: String!
+}
+
 input UserInput {
   id: Float
   name: String
@@ -28,9 +33,15 @@ input UserInput {
 }
 
 type Query {
-  login(user: UserInput!): User
+  login(user: LoginInput!): LoginResponse
   users(ids: [Int!]!): [User!]!
   user(id: Int!): User
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+  expires: Float
 }
 
 type Mutation {

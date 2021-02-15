@@ -1,4 +1,6 @@
 import { Args, Int, Mutation, Query, Resolver } from "@nestjs/graphql";
+import { LoginBody } from "src/classes/LoginBody";
+import { LoginResponse } from "src/classes/LoginResponse";
 import { User } from "src/database/mysql/entities/users.entity";
 import { UsersService } from "./users.service";
 
@@ -11,8 +13,8 @@ export class UsersResolver {
     return this.usersService.create(user);
   }
 
-  @Query(() => User, { nullable: true })
-  async login(@Args('user', { type: () => User }) user: User): Promise<User> {
+  @Query(() => LoginResponse, { nullable: true })
+  async login(@Args('user', { type: () => LoginBody }) user: LoginBody): Promise<LoginResponse> {
     return this.usersService.login(user);
   }
 

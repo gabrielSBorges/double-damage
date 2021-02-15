@@ -1,5 +1,6 @@
 import { BadRequestException } from "@nestjs/common";
 import { polyglot } from "polyglot-rpg";
+import { DataBaseError } from "src/classes/DataBaseError";
 
 export function databaseError(error: DataBaseError): BadRequestException {
     
@@ -12,15 +13,6 @@ export function databaseError(error: DataBaseError): BadRequestException {
         default:
             return new BadRequestException(polyglot.misc.locale('internal_server_error', 'ptBR'));
     }
-}
-
-class DataBaseError {
-    code: string;
-    errno: number;
-    sqlState: string;
-    sqlMessage: string;
-    query: string;
-    parameters: any[];
 }
 
 function getKeyFromErrorMessage(message: string, parameters: any[]) {

@@ -20,7 +20,7 @@ export const loginValidation = Yup.object().shape({
         .string()
         .email(polyglot.yup.locale('invalid_email', 'ptBR'))
         .required(polyglot.yup.locale('required_field', 'ptBR', { field: 'email' })),
-    _password: Yup
+    password: Yup
         .string()
         .required(polyglot.yup.locale('required_field', 'ptBR', { field: 'password' })),
 });

@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { GraphQLError, GraphQLFormattedError } from 'graphql';
-import { UsersModule } from './routes/users/users.module';
+import { UsersModule } from './modules/users/users.module';
 
 @Module({
 	imports: [
@@ -10,17 +10,13 @@ import { UsersModule } from './routes/users/users.module';
 			autoSchemaFile: 'src/schema.gql',
 			formatError: (error: GraphQLError): GraphQLFormattedError => {
 				const graphQLFormattedError: GraphQLFormattedError = {
-					message: error.extensions.exception.response.message || error.extensions.code,
-					extensions: {
-						code: error.extensions.code,
-						statusCode: error.extensions.exception.response.statusCode
-					}
+					message: error.extensions.exception.message,
 				};
 
 				return graphQLFormattedError;
 			},
 		}),
-		UsersModule
+		UsersModule,
 	],
 })
 

@@ -6840,10 +6840,10 @@ pluralize@8.0.0:
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-8.0.0.tgz#1a6fa16a38d12a1901e0320fa017051c539ce3b1"
   integrity sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==
 
-polyglot-rpg@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/polyglot-rpg/-/polyglot-rpg-1.2.2.tgz#390454624f2cc36edc26439e2e528fb8c558b500"
-  integrity sha512-qJIlPrt3c/R4bRWq6knlg7xon1pzdZfCUzX5tsx9vNT0bQLq6LhuHj/BJ7vaseYHvSIrrujlf2tsXsvnHgM30A==
+polyglot-rpg@1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/polyglot-rpg/-/polyglot-rpg-1.4.0.tgz#90e90d08c2c256ac55f59df964603343da151133"
+  integrity sha512-YrlkMpJYO2s6QMRGmVYZyjReNpRyDqDbG1y2O1VEFp1loczUWGmfdEUUL6WhTTeHEPpDHi3lq31oi0HyhOmkCg==
 
 posix-character-classes@^0.1.0:
   version "0.1.1"
